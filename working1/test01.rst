@@ -6,7 +6,7 @@
 
 Zur Nutzung eines privaten Repositories für Docker-Images und für andere Dateien wurde auf dem Installserver ein **Nexus Repository-Manager** eingerichtet.
 
-Dieser Manager ist auf dem Installserver erreichbar unter der Adresse [https://10.120.13.250:8443}(https://10.120.13.250:8443).
+Dieser Manager ist auf dem Installserver erreichbar unter der Adresse [https://10.122.13.221:8443}(https://10.122.13.221:8443).
 
 Der Admin-Account wird mit dem user “admin” erreicht.
 
@@ -27,7 +27,7 @@ Für die Verbindung von einem Rechner zum Repository Manager sind noch folgende 
    [registries.insecure]
    registries = ['installserver:5080']
 
-Bitte vorher noch sicherstellen, dass der Eintrag installserver auf die ip 10.120.13.250 in der hosts-Datei zeigt.
+Bitte vorher noch sicherstellen, dass der Eintrag installserver auf die ip 10.1223.250 in der hosts-Datei zeigt.
 
 zusätzlich benötigt es für den Docker-Client noch folgenden Eintrag:
 
@@ -51,7 +51,7 @@ Beispiel um ein Image herunterzuladen:
 .. code-block:: shell
 
    [root@demo01 .docker]# docker login installserver:5080
-   Username: student2
+   Username: dummy5
    Password:
    Login Succeeded
 
@@ -111,11 +111,9 @@ Der Dateiname lautet dann **ca.crt**
    YWxsc2VydmVyMB4XDTE5MDgyMjA5MDYwNVoXDTQxMDcxNzA5MDYwNVowRTEUMBIG
    CgmSJomT8ixkARkWBHNpdGUxFTATBgoJkiaJk/IsZAEZFgVsb2NhbDEWMBQGA1UE
    AxMNaW5zdGFsbHNlcnZlcjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
-   AMdvCTHxb3uX5vwDTAtLjUvGkvcWDHR2wxUF1afIf32+rvLJ+0YsunR8WPvJNVWs
    Waly1cahGyhndLlRJ8OSRclS/axZz5as15W3pG9Vg0kIDDskKtmUG7o69HTBkzQO
    mhRFyRcNg5BNPu44MEkoVgZy5TlJT/awmDfdaI4GsTyqGQ3ZKyrFuY3svjvrZw5p
    hFBZ/v9YZQVmIHWH0M7d9yYF3oy1u+zdBaKSlqNbommvbNp8eJf3WA4wPRyzO/zo
-   L/Vp9DRy7NjXGyLXIkJ8fimAwvAH7jtsXz91t2umeSBWPyKu4zqfcTBNuTogwgYR
    zGoiOG82jul1fVEa6BwdwQcCAwEAAaNPME0wDAYDVR0TBAUwAwEB/zAeBgNVHREE
    FzAVgg1pbnN0YWxsc2VydmVyhwQKeA36MB0GA1UdDgQWBBTPPXmC6nCoWU7JX6BD
    h/VVc6RuvjANBgkqhkiG9w0BAQsFAAOCAQEANEf8GgkraqVmt/5KA5Aq7oOJRFD7
@@ -139,4 +137,4 @@ Mit folgendem Kdo. kann man Dateien in das RAW-Repository hochladen. Die Option 
 
 .. code-block:: shell
 
-   # curl -v -k --user 'studentx:student123' --upload-file ./flaskdemo.tar https://installserver:8443/repository/schulung-raw/01-dockerimage/flaskdemo.tar
+   # curl -v -k --upload-file ./flaskdemo.tar https://installserver:8443/repository/schulung-raw/01-dockerimage/flaskdemo.tar
